@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "901961368404",
+    "project_id": "calendar-e653a",
+    "storage_bucket": "calendar-e653a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:901961368404:android:909dbd93d5a0015f183ec1",
+        "android_client_info": {
+          "package_name": "com.example.untitled2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "901961368404-phptshkc1ncijdcartpt6tn7t0iedi4s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBY936iiDeNTG9eHZ8l1l0N_v_zN1fkH_k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "901961368404-phptshkc1ncijdcartpt6tn7t0iedi4s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
