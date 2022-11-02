@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "901961368404",
-    "project_id": "calendar-e653a",
-    "storage_bucket": "calendar-e653a.appspot.com"
+    "project_number": "24311232481",
+    "project_id": "fir-tohyo",
+    "storage_bucket": "fir-tohyo.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:901961368404:android:909dbd93d5a0015f183ec1",
+        "mobilesdk_app_id": "1:24311232481:android:bada93c0e82901b5e244a0",
         "android_client_info": {
-          "package_name": "com.example.untitled2"
+          "package_name": "com.example.tohyo"
         }
       },
       "oauth_client": [
         {
-          "client_id": "901961368404-phptshkc1ncijdcartpt6tn7t0iedi4s.apps.googleusercontent.com",
+          "client_id": "24311232481-5d0ucuch496b01bk3okjrp6sld67g07o.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBY936iiDeNTG9eHZ8l1l0N_v_zN1fkH_k"
+          "current_key": "AIzaSyBlkkGnIyQUkoeSZRoKE0XyTx3392cebEw"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "901961368404-phptshkc1ncijdcartpt6tn7t0iedi4s.apps.googleusercontent.com",
+              "client_id": "24311232481-5d0ucuch496b01bk3okjrp6sld67g07o.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
