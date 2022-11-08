@@ -36,27 +36,27 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text('Baby Name Votes')),
-        body: FutureBuilder(
+      body: FutureBuilder(
         future: initialize(),
-    builder: (context, snapshot) {
-    // // 通信中はスピナーを表示
-    // if (snapshot.connectionState != ConnectionState.done) {
-    //   return CircularProgressIndicator();
-    // }
-    // // エラー発生時はエラーメッセージを表示
-    // if (snapshot.hasError) {
-    //   return Text(snapshot.error.toString());
-    // }
+        builder: (context, snapshot) {
+          // // 通信中はスピナーを表示
+          // if (snapshot.connectionState != ConnectionState.done) {
+          //   return CircularProgressIndicator();
+          // }
+          // // エラー発生時はエラーメッセージを表示
+          // if (snapshot.hasError) {
+          //   return Text(snapshot.error.toString());
+          // }
 
-    // // データがnullでないかチェック
-    // if (!snapshot.hasData) {
-    //   return Text("データが存在しません");
-    // }
+          // // データがnullでないかチェック
+          // if (!snapshot.hasData) {
+          //   return Text("データが存在しません");
+          // }
 
-      return Column(
-        children: documentList.map((data) => Text(data.get('name') + ' : ' + data.get('votes').toString())).toList(),
-      );
-    },
+          return Column(
+            children: documentList.map((data) => Text(data.get('name') + ' : ' + data.get('votes').toString())).toList(),
+          );
+        },
       ),
     );
   }
