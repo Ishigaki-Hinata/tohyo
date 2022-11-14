@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "24311232481-2p7sdvlb0tu2re7706i9v5c9kv57k9us.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.tohyo",
+            "certificate_hash": "09ae07042796ca8bb1f472b36ae916c9d97d045b"
+          }
+        },
+        {
           "client_id": "24311232481-5d0ucuch496b01bk3okjrp6sld67g07o.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -29,6 +37,13 @@
             {
               "client_id": "24311232481-5d0ucuch496b01bk3okjrp6sld67g07o.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "24311232481-p8mn4jjpod6sjg1muv70g0mojkg4daam.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.tohyo"
+              }
             }
           ]
         }
