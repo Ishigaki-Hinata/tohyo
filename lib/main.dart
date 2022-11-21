@@ -1,3 +1,4 @@
+/*
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -6,6 +7,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:extension_google_sign_in_as_googleapis_auth/extension_google_sign_in_as_googleapis_auth.dart';
 import 'package:uuid/uuid.dart';
+*/
 
 // クラス名、メソッド名、プロパティ名（変数名）について、筆者が作成したもの（名前変更可のもの）
 // の名前の末尾には、大文字のオー「O」をつけています
