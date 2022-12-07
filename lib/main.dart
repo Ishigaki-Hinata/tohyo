@@ -9,32 +9,34 @@ import 'package:extension_google_sign_in_as_googleapis_auth/extension_google_sig
 import 'package:uuid/uuid.dart';
 */
 
-// クラス名、メソッド名、プロパティ名（変数名）について、筆者が作成したもの（名前変更可のもの）
-// の名前の末尾には、大文字のオー「O」をつけています
-// ※ライブラリ（パッケージ）で予め決められているもの（名前の変更不可のもの）と、
-//  自分で作成したもの（名前の変更可のもの）の区別をしやすくするため
+ // クラス名、メソッド名、プロパティ名（変数名）について、筆者が作成したもの（名前変更可のもの）
+ // の名前の末尾には、大文字のオー「O」をつけています
+ // ※ライブラリ（パッケージ）で予め決められているもの（名前の変更不可のもの）と、
+ //  自分で作成したもの（名前の変更可のもの）の区別をしやすくするため
 import 'package:flutter/material.dart';
+import 'package:syncfusion_flutter_calendar/calendar.dart';
 import 'package:google_sign_in/google_sign_in.dart' as signInO;
 import 'package:googleapis/calendar/v3.dart' as calendarO;
 import 'package:extension_google_sign_in_as_googleapis_auth/extension_google_sign_in_as_googleapis_auth.dart';
 import 'package:uuid/uuid.dart';
 // // firebase上にサインインしたユーザー情報を記録する場合は以下をインポート ※pubspec.yamlに追記が必要
-// import 'package:firebase_core/firebase_core.dart';
-// import 'package:firebase_auth/firebase_auth.dart';
-void main() => runApp(MyApp());
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+// void main() => runApp(MyApp());
 // // firebase上にサインインのユーザー情報を記録する場合は、
 // // firebaseの初期化処理が必要になるため、上の1文を下記に書き換える
 // // ※firebase_coreのインポートが必要
-// Future<void> main() async{
-//
-//   // main関数内で非同期処理をするときはこれが必要
-//   WidgetsFlutterBinding.ensureInitialized();
-//
-//   // Firebaseの初期化処理
-//   await Firebase.initializeApp();
-//
-//   runApp(MyApp());
-// }
+Future<void> main() async{
+
+  // main関数内で非同期処理をするときはこれが必要
+  WidgetsFlutterBinding.ensureInitialized();
+
+  // Firebaseの初期化処理
+  await Firebase.initializeApp();
+
+  runApp(MyApp());
+}
+
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -268,6 +270,13 @@ class _SampleScreenOState extends State<SampleScreenO> {
                 ),
                 /// Googleアカウントへのサインイン状態を表示
                 Text(signInStatusO),
+
+                Container(
+                  child: SfCalendar(
+                    view:CalendarView.month,
+                  ),
+                ),
+
               ],
             ),
           ),
@@ -315,24 +324,25 @@ class _SampleScreenOState extends State<SampleScreenO> {
           throw Exception();
         }
       }
-// /// firebase上にサインインしたユーザー情報を記録する場合は以下を追加
-// // ※firebase_auth、firebase_coreのインポートが必要
-//
-// signInO.GoogleSignInAuthentication authO =
-// await accountO!.authentication;
-//
-// final OAuthCredential credentialO =
-// GoogleAuthProvider.credential(
-//   idToken: authO.idToken,
-//   accessToken: authO.accessToken,
-// );
-//
-// // このユーザーデータ（userO）を必要に応じて使用する
-// User? userO =
-//     (await FirebaseAuth.instance.signInWithCredential(credentialO)).user;
-//
-// // 使用する一例として、Firebase上で管理される「ユーザーUID」をログに表示
-// print("ユーザーUID: ${userO!.uid}");
+/// firebase上にサインインしたユーザー情報を記録する場合は以下を追加
+// ※firebase_auth、firebase_coreのインポートが必要
+
+signInO.GoogleSignInAuthentication authO =
+await accountO!.authentication;
+
+final OAuthCredential credentialO =
+GoogleAuthProvider.credential(
+  idToken: authO.idToken,
+  accessToken: authO.accessToken,
+);
+
+// このユーザーデータ（userO）を必要に応じて使用する
+User? userO =
+    (await FirebaseAuth.instance.signInWithCredential(credentialO)).user;
+
+// 使用する一例として、Firebase上で管理される「ユーザーUID」をログに表示
+print("ユーザーUID: ${userO!.uid}");
+
 // サインイン表示に変更し、再描画
       setState(() {
         signInStatusO = "サインイン中";
