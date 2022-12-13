@@ -22,6 +22,7 @@ import 'package:uuid/uuid.dart';
 // // firebase上にサインインしたユーザー情報を記録する場合は以下をインポート ※pubspec.yamlに追記が必要
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+
 // void main() => runApp(MyApp());
 // // firebase上にサインインのユーザー情報を記録する場合は、
 // // firebaseの初期化処理が必要になるため、上の1文を下記に書き換える
@@ -272,6 +273,7 @@ class _SampleScreenOState extends State<SampleScreenO> {
                 Text(signInStatusO),
 
                 Container(
+                  height: 400,
                   child: SfCalendar(
                     view:CalendarView.month,
                   ),
@@ -746,6 +748,55 @@ print("ユーザーUID: ${userO!.uid}");
     }
   }
 }
+
+class GoogleDataSource extends CalendarDataSource {
+  GoogleDataSource({List<googleAPI.Event> events}) {
+    this.appointments = events;
+  }
+
+  @override
+  DateTime getStartTime(int index) {
+    final googleAPI.Event event = appointments[index];
+    return event.start.date ?? event.start.dateTime.toLocal();
+  }
+
+  @override
+  bool isAllDay(int index) {
+    return appointments[index].start.date != null;
+  }
+
+  @override
+  DateTime getEndTime(int index) {
+    final googleAPI.Event event = appointments[index];
+    return event.endTimeUnspecified != null && event.endTimeUnspecified
+        ? (event.start.date ?? event.start.dateTime.toLocal())
+        : (event.end.date != null
+        ? event.end.date.add(Duration(days: -1))
+        : event.end.dateTime.toLocal());
+  }
+
+  @override
+  String getLocation(int index) {
+    return appointments[index].location;
+  }
+
+  @override
+  String getNotes(int index) {
+    return appointments[index].description;
+  }
+
+  @override
+  String getSubject(int index) {
+    final googleAPI.Event event = appointments[index];
+    return event.summary == null || event.summary.isEmpty
+        ? 'No Title'
+        : event.summary;
+  }
+}
+
+
+
+
 
 /*
 void main() async{
